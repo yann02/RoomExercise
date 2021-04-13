@@ -14,7 +14,7 @@ import androidx.room.*
 @Dao
 interface FruitDao {
     @Insert
-    fun insert(entity: Fruit): Int
+    fun insert(entity: Fruit)
 
     @Delete
     fun delete(entity: Fruit): Int
@@ -23,5 +23,5 @@ interface FruitDao {
     fun update(entity: Fruit): Int
 
     @Query("SELECT * FROM fruit")
-    fun queryEntitiesOfAll()
+    fun queryEntitiesOfAll(): List<Fruit>
 }
