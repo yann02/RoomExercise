@@ -19,4 +19,7 @@ data class Fruit(
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
     var prince: Float? = 0f
+    override fun toString(): String {
+        return "Prince of $name is $prince"
+    }
 }

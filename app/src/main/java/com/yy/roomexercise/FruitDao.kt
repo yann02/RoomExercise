@@ -1,5 +1,6 @@
 package com.yy.roomexercise
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 
 /**
@@ -23,5 +24,11 @@ interface FruitDao {
     fun update(entity: Fruit): Int
 
     @Query("SELECT * FROM fruit")
-    fun queryEntitiesOfAll(): List<Fruit>
+    fun queryAllEntitiesOnLiveData(): LiveData<List<Fruit>>
+
+    @Query("SELECT * FROM fruit")
+    suspend fun queryAllEntitiesOnCoroutine(): List<Fruit>
+
+    @Query("SELECT * FROM fruit")
+    fun queryAllEntities(): List<Fruit>
 }
