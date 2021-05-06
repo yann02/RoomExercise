@@ -16,6 +16,8 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url 'http://47.106.198.180:8191/nexus/content/repositories/thirdparty'}
+        maven { url "https://jitpack.io" }
         google()
         jcenter()
     }

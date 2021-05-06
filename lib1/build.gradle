@@ -1,16 +1,15 @@
 plugins {
-    id 'com.android.application'
+//    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
-    id 'kotlin-kapt'
 }
-//  kapt:kotlin annotation processor tool
 
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.yy.roomexercise"
+//        applicationId "com.shkj.lib1"
         minSdkVersion 25
         targetSdkVersion 30
         versionCode 1
@@ -18,6 +17,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -31,13 +31,6 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    packagingOptions {
-        exclude 'META-INF/*******'
-        exclude 'META-INF/INDEX.LIST'
-    }
-    dataBinding {
-        enabled = true
-    }
 }
 
 dependencies {
@@ -45,29 +38,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-
-    //  Room
-    def room_version = "2.2.6"
-
-    implementation "androidx.room:room-runtime:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
-
-    // optional - Kotlin Extensions and Coroutines support for Room
-    implementation "androidx.room:room-ktx:$room_version"
-
-    // optional - Test helpers
-    testImplementation "androidx.room:room-testing:$room_version"
-    implementation "com.dosmono.module.rouyu:schedulemanager:1.0.1_7"
-//    implementation "com.dosmono.module.yunyiben:yunyibensetting:1.0.0_B01_ry"
-    implementation "com.dosmono.module.rouyu:platecommon:1.0.1_B32"
-    implementation "com.dosmono.library:universal:3.0.5_beta18"
-    implementation "com.dosmono.module:bridge:1.0.2_B18"
-    implementation "com.dosmono.library:ai-model:3.0.2_beta31"
-    implementation 'me.jessyan:autosize:1.2.1'
-    implementation project(':lib1')
 }
